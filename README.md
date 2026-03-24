@@ -17,22 +17,6 @@
 
 ---
 
-## ✏️ The Design Philosophy
-
-This project celebrates **authentic imperfection and human touch** in a digital world. It rejects the clinical precision of modern UI design in favor of organic, playful irregularity — like sketches on notebook paper, sticky notes on a wall, and napkin diagrams from a brainstorming session.
-
-> *"No straight lines. No perfect circles. Just pencil, paper, and a whole lot of personality."*
-
-### 🎨 Visual Signatures
-- **Warm Paper Palette**: Soft `#fdfbf7` paper background with pencil-black `#2d2d2d` foreground.
-- **Wobbly Borders**: Every container, button, and card uses irregular border-radius values for hand-drawn edges.
-- **Hard Offset Shadows**: Solid `4px 4px 0px` cut-paper shadows — no blur, ever.
-- **Dot-Grid Texture**: Subtle notebook-style dot pattern on the background via CSS `radial-gradient`.
-- **Handwritten Typography**: *Kalam* (headings) and *Patrick Hand* (body text) — never corporate.
-- **Sketchy Decorations**: Tape strips, thumbtack pins, hand-drawn SVG arrows, squiggly connectors, and wavy underlines.
-
----
-
 ## ⚡ Features
 
 ### 1. Playful Interactions 🪄
