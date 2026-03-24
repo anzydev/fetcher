@@ -3,183 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Public API Playground — Art Deco Edition</title>
-  <meta name="description" content="An interactive Art Deco playground to explore real public APIs — fetch random dogs, jokes, user profiles, and posts in a luxurious gold-on-black interface." />
+  <title>Public API Playground — Sketchbook Edition</title>
+  <meta name="description" content="An interactive hand-drawn playground to explore real public APIs — fetch random dogs, jokes, user profiles, and posts in a playful sketchbook interface." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Full-page particle canvas (behind everything) -->
-  <canvas id="particles" aria-hidden="true"></canvas>
 
   <!-- ═══════════════════════════════════════════════ -->
   <!-- HERO SECTION                                    -->
   <!-- ═══════════════════════════════════════════════ -->
   <header class="hero" id="hero">
-    <!-- Sunburst radial background element -->
-    <div class="hero__sunburst" aria-hidden="true"></div>
-
-    <!-- Decorative corner L-brackets -->
-    <span class="corner-bracket corner-bracket--tl" aria-hidden="true"></span>
-    <span class="corner-bracket corner-bracket--br" aria-hidden="true"></span>
-
     <div class="hero__content" id="hero-content">
-      <!-- Top decorative line -->
-      <div class="deco-line" aria-hidden="true">
-        <span class="deco-line__segment"></span>
-        <span class="deco-line__diamond">◆</span>
-        <span class="deco-line__segment"></span>
-      </div>
 
-      <h1 class="hero__title" data-text="PUBLIC API PLAYGROUND">PUBLIC API<br/>PLAYGROUND</h1>
-      <p class="hero__subtitle">Explore real APIs in an interactive &amp; dynamic way</p>
+      <hr class="hero__deco-line" aria-hidden="true" />
 
-      <!-- Bottom decorative line -->
-      <div class="deco-line" aria-hidden="true">
-        <span class="deco-line__segment"></span>
-        <span class="deco-line__diamond">◆</span>
-        <span class="deco-line__segment"></span>
-      </div>
+      <h1 class="hero__title">
+        Public API<br/>Playground<span class="exclaim">!</span>
+      </h1>
+      <p class="hero__subtitle">explore real APIs in an interactive & sketchy way</p>
+
+      <hr class="hero__deco-line" aria-hidden="true" />
 
       <div class="hero__scroll-hint" aria-hidden="true">
-        <span class="scroll-chevron">▽</span>
+        <span class="scroll-chevron">↓</span>
       </div>
     </div>
+
+    <!-- Hand-drawn SVG arrow (desktop only) -->
+    <svg class="hero__arrow" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M10 50 Q 30 10, 60 30 Q 80 45, 90 15" stroke="#2d5da1" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round" fill="none"/>
+      <path d="M85 10 L90 15 L82 18" stroke="#2d5da1" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Bouncing decorative blob (desktop only) -->
+    <div class="bounce-circle" style="top: 15%; left: 5%;" aria-hidden="true"></div>
   </header>
 
   <!-- ═══════════════════════════════════════════════ -->
   <!-- SECTION I — DOG FINDER                          -->
   <!-- ═══════════════════════════════════════════════ -->
-  <section class="api-section section--dog reveal-section" id="section-dog">
-    <!-- Stepped corner decorations -->
-    <span class="stepped-corner stepped-corner--tl" aria-hidden="true"></span>
-    <span class="stepped-corner stepped-corner--br" aria-hidden="true"></span>
-    <!-- Vertical architectural line -->
-    <span class="vertical-line vertical-line--left" aria-hidden="true"></span>
-
+  <section class="api-section reveal-section" id="section-dog">
     <div class="section__inner">
       <div class="section__header">
-        <span class="section__numeral">I</span>
-        <div class="diamond-icon" aria-hidden="true">
-          <span class="diamond-icon__inner">🐶</span>
-        </div>
-        <h2 class="section__title">Dog Finder</h2>
-        <div class="deco-line deco-line--sm" aria-hidden="true">
-          <span class="deco-line__segment"></span>
-          <span class="deco-line__diamond">◆</span>
-          <span class="deco-line__segment"></span>
-        </div>
+        <span class="section__numeral">— I —</span>
+        <div class="section__icon" aria-hidden="true">🐶</div>
+        <h2 class="section__title"><span class="wavy-underline">Dog Finder</span></h2>
+        <hr class="section__deco-line" aria-hidden="true" />
         <p class="section__desc">Discover a random breed with every click</p>
       </div>
       <div class="section__actions">
-        <button class="btn" id="btn-dog" type="button">GET DOG</button>
+        <button class="btn" id="btn-dog" type="button">✏️ Get Dog</button>
       </div>
-      <div class="section__result card-3d" id="result-dog">
-        <span class="card-corner card-corner--tl" aria-hidden="true"></span>
-        <span class="card-corner card-corner--br" aria-hidden="true"></span>
-        <p class="result__placeholder">Hit the button to fetch a pup</p>
+      <div class="section__result" id="result-dog">
+        <span class="tape-deco" aria-hidden="true"></span>
+        <p class="result__placeholder">Hit the button to fetch a pup ✨</p>
       </div>
     </div>
   </section>
+
+  <!-- Squiggly connector between sections (desktop) -->
+  <svg class="squiggly-connector" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 30 Q 25 5, 50 30 Q 75 55, 100 30 Q 125 5, 150 30 Q 175 55, 200 30" stroke="#e5e0d8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>
 
   <!-- ═══════════════════════════════════════════════ -->
   <!-- SECTION II — JOKE GENERATOR                     -->
   <!-- ═══════════════════════════════════════════════ -->
-  <section class="api-section section--joke reveal-section" id="section-joke">
-    <span class="stepped-corner stepped-corner--tr" aria-hidden="true"></span>
-    <span class="stepped-corner stepped-corner--bl" aria-hidden="true"></span>
-    <span class="vertical-line vertical-line--right" aria-hidden="true"></span>
-
+  <section class="api-section reveal-section" id="section-joke">
     <div class="section__inner">
       <div class="section__header">
-        <span class="section__numeral">II</span>
-        <div class="diamond-icon" aria-hidden="true">
-          <span class="diamond-icon__inner">😂</span>
-        </div>
-        <h2 class="section__title">Joke Generator</h2>
-        <div class="deco-line deco-line--sm" aria-hidden="true">
-          <span class="deco-line__segment"></span>
-          <span class="deco-line__diamond">◆</span>
-          <span class="deco-line__segment"></span>
-        </div>
-        <p class="section__desc">Random two-part jokes to brighten your day</p>
+        <span class="section__numeral">— II —</span>
+        <div class="section__icon" aria-hidden="true">😂</div>
+        <h2 class="section__title"><span class="wavy-underline">Joke Generator</span></h2>
+        <hr class="section__deco-line" aria-hidden="true" />
+        <p class="section__desc">Random jokes to brighten your day</p>
       </div>
       <div class="section__actions">
-        <button class="btn" id="btn-joke" type="button">GET JOKE</button>
+        <button class="btn" id="btn-joke" type="button">✏️ Get Joke</button>
       </div>
-      <div class="section__result card-3d" id="result-joke">
-        <span class="card-corner card-corner--tl" aria-hidden="true"></span>
-        <span class="card-corner card-corner--br" aria-hidden="true"></span>
-        <p class="result__placeholder">Ready for a laugh? Press the button</p>
+      <div class="section__result" id="result-joke">
+        <span class="tack-deco" aria-hidden="true"></span>
+        <p class="result__placeholder">Ready for a laugh? Press the button 🎭</p>
       </div>
     </div>
   </section>
+
+  <!-- Squiggly connector -->
+  <svg class="squiggly-connector" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 30 Q 25 5, 50 30 Q 75 55, 100 30 Q 125 5, 150 30 Q 175 55, 200 30" stroke="#e5e0d8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>
 
   <!-- ═══════════════════════════════════════════════ -->
   <!-- SECTION III — RANDOM USER                       -->
   <!-- ═══════════════════════════════════════════════ -->
-  <section class="api-section section--user reveal-section" id="section-user">
-    <span class="stepped-corner stepped-corner--tl" aria-hidden="true"></span>
-    <span class="stepped-corner stepped-corner--br" aria-hidden="true"></span>
-    <span class="vertical-line vertical-line--left" aria-hidden="true"></span>
-
+  <section class="api-section reveal-section" id="section-user">
     <div class="section__inner">
       <div class="section__header">
-        <span class="section__numeral">III</span>
-        <div class="diamond-icon" aria-hidden="true">
-          <span class="diamond-icon__inner">👤</span>
-        </div>
-        <h2 class="section__title">Random User</h2>
-        <div class="deco-line deco-line--sm" aria-hidden="true">
-          <span class="deco-line__segment"></span>
-          <span class="deco-line__diamond">◆</span>
-          <span class="deco-line__segment"></span>
-        </div>
+        <span class="section__numeral">— III —</span>
+        <div class="section__icon" aria-hidden="true">👤</div>
+        <h2 class="section__title"><span class="wavy-underline">Random User</span></h2>
+        <hr class="section__deco-line" aria-hidden="true" />
         <p class="section__desc">Generate a fictional identity from around the world</p>
       </div>
       <div class="section__actions">
-        <button class="btn" id="btn-user" type="button">GET USER</button>
+        <button class="btn" id="btn-user" type="button">✏️ Get User</button>
       </div>
-      <div class="section__result card-3d" id="result-user">
-        <span class="card-corner card-corner--tl" aria-hidden="true"></span>
-        <span class="card-corner card-corner--br" aria-hidden="true"></span>
-        <p class="result__placeholder">Who will you discover? Click to find out</p>
+      <div class="section__result" id="result-user">
+        <span class="tape-deco" aria-hidden="true"></span>
+        <p class="result__placeholder">Who will you discover? Click to find out 🌍</p>
       </div>
     </div>
   </section>
 
+  <!-- Squiggly connector -->
+  <svg class="squiggly-connector" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 30 Q 25 5, 50 30 Q 75 55, 100 30 Q 125 5, 150 30 Q 175 55, 200 30" stroke="#e5e0d8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>
+
   <!-- ═══════════════════════════════════════════════ -->
   <!-- SECTION IV — POST VIEWER                        -->
   <!-- ═══════════════════════════════════════════════ -->
-  <section class="api-section section--post reveal-section" id="section-post">
-    <span class="stepped-corner stepped-corner--tr" aria-hidden="true"></span>
-    <span class="stepped-corner stepped-corner--bl" aria-hidden="true"></span>
-    <span class="vertical-line vertical-line--right" aria-hidden="true"></span>
-
+  <section class="api-section reveal-section" id="section-post">
     <div class="section__inner">
       <div class="section__header">
-        <span class="section__numeral">IV</span>
-        <div class="diamond-icon" aria-hidden="true">
-          <span class="diamond-icon__inner">📄</span>
-        </div>
-        <h2 class="section__title">Post Viewer</h2>
-        <div class="deco-line deco-line--sm" aria-hidden="true">
-          <span class="deco-line__segment"></span>
-          <span class="deco-line__diamond">◆</span>
-          <span class="deco-line__segment"></span>
-        </div>
+        <span class="section__numeral">— IV —</span>
+        <div class="section__icon" aria-hidden="true">📝</div>
+        <h2 class="section__title"><span class="wavy-underline">Post Viewer</span></h2>
+        <hr class="section__deco-line" aria-hidden="true" />
         <p class="section__desc">Fetch sample posts from a mock API</p>
       </div>
       <div class="section__actions">
-        <button class="btn" id="btn-post" type="button">GET POST</button>
+        <button class="btn" id="btn-post" type="button">✏️ Get Post</button>
       </div>
-      <div class="section__result card-3d" id="result-post">
-        <span class="card-corner card-corner--tl" aria-hidden="true"></span>
-        <span class="card-corner card-corner--br" aria-hidden="true"></span>
-        <p class="result__placeholder">Grab a post from the server</p>
+      <div class="section__result" id="result-post">
+        <span class="tack-deco" aria-hidden="true"></span>
+        <p class="result__placeholder">Grab a post from the server 📄</p>
       </div>
     </div>
   </section>
@@ -188,12 +149,8 @@
   <!-- FOOTER                                          -->
   <!-- ═══════════════════════════════════════════════ -->
   <footer class="footer">
-    <div class="deco-line deco-line--sm" aria-hidden="true">
-      <span class="deco-line__segment"></span>
-      <span class="deco-line__diamond">◆</span>
-      <span class="deco-line__segment"></span>
-    </div>
-    <p>Crafted with precision &amp; public APIs &mdash; <span id="year"></span></p>
+    <hr class="footer__deco-line" aria-hidden="true" />
+    <p>Sketched with ✏️ & public APIs — <span id="year"></span></p>
   </footer>
 
   <script src="script.js"></script>
